@@ -1,0 +1,503 @@
+@import url(common.css);
+
+/* _________________GLOBAL_________________ */
+
+body {
+  color: var(--font_color);
+  background: var(--background_color);
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+h1 {
+  font-family: 'Architects Daughter';
+  font-size: 62px;
+  font-weight: 400;
+}
+
+h2 {
+  font-family: 'Architects Daughter';
+  font-size: 32px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font_color);
+}
+
+/* _________________HEADER_________________ */
+.header_box {
+  background: var(--main_color);
+  padding: 20px 0;
+}
+
+.flex_contaner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_menu {
+  display: flex;
+  gap: 30px;
+}
+
+.header_menu li {
+  position: relative;
+}
+
+.header_menu > li a::before,
+.header_menu > li a::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  border-radius: 6px;
+  background: var(--active_color);
+  transition: all 0.2s linear;
+}
+
+.header_menu > li:hover a::after,
+.header_menu > li:hover a::after {
+  width: 100%;
+  left: 0;
+  transition: all 0.2s linear;
+}
+
+.burger {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.burger::before,
+.burger span,
+.burger::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--font_color);
+  height: 4px;
+  border-radius: 6px;
+  transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.burger span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger::after {
+  top: auto;
+  bottom: -1px;
+}
+.burger:hover span {
+  transform: scale(0);
+}
+
+.burger:hover::after {
+  top: 50%;
+  transform-origin: center;
+  transform: rotate(405deg);
+}
+.burger:hover::before {
+  top: 50%;
+  transform-origin: center;
+  transform: rotate(-405deg);
+}
+
+/* _________________HOME_________________ */
+.home_box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 120px;
+}
+
+.home_content {
+  flex: 0 1 50%;
+}
+
+.home_img {
+  flex: 0 0 50%;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.home_content > p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 19px 34px 19px 34px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:first-child {
+  margin-right: 23px;
+}
+
+.order_button {
+  background: var(--main_color);
+}
+
+.help_button {
+  text-decoration: none;
+  color: var(--font_color);
+  border: 1px solid var(--main_color);
+  display: inline-block;
+}
+
+.order_button:hover {
+  box-shadow: 0px 0px 0px 2px var(--box_shadow);
+}
+
+.order_button:active {
+  background-color: var(--background_color_active);
+  box-shadow: 0px 0px 2px var(--box_shadow);
+}
+
+.help_button:hover {
+  box-shadow: 0px 0px 0px 2px var(--box_shadow);
+  /* outline: 2px solid var(--main_color); */
+}
+.help_button:active {
+  box-shadow: 0px 0px 2px var(--box_shadow_second);
+  outline: 1px solid var(--main_color);
+}
+
+.home_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* _________________ABOUT US_________________ */
+.about_us_box {
+  padding-bottom: 120px;
+}
+
+.about_us_content {
+  max-width: 540px;
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+h2 {
+  margin-bottom: 50px;
+}
+
+.advantages {
+  background: var(--main_color);
+}
+
+.advantages > ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 78px 15px;
+}
+
+.advantages ul > li > p {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.list {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.list svg {
+  width: 80px;
+  height: 79px;
+  margin-bottom: 25px;
+  fill: #161616;
+}
+.list svg:hover {
+  transform: scale(1.1);
+}
+
+/* _________________HOW WE WORK_________________ */
+.how_we_work_box {
+  display: flex;
+  gap: 30px;
+  padding-bottom: 120px;
+  align-items: center;
+}
+.how_we_work_img {
+  /* height: 560px; */
+  flex: 0 0 50%;
+}
+
+.how_we_work_img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.how_we_work_content {
+  flex: 0 1 50%;
+  text-align: left;
+}
+.how_we_work_content h2 {
+  text-align: center;
+}
+
+/* _________________OUR WORKS_________________ */
+
+.our_wors_box {
+  padding-bottom: 120px;
+}
+
+.our_wors_box > h2 {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex: 0 0 30%;
+  border-radius: 6px;
+  background: var(--main_color);
+  padding: 15px 15px 40px 15px;
+}
+
+.card_img {
+  display: block;
+  object-fit: cover;
+  /* width: 100%; */
+  /* height: 400px; */
+  margin-bottom: 23px;
+}
+.card_img img {
+  width: 320px;
+  height: 402px;
+}
+
+.card > p {
+  text-align: center;
+}
+
+/* _________________FOOTER_________________ */
+.footer {
+  background: var(--main_color);
+  padding: 50px 0px;
+}
+
+.footer_menu {
+  text-align: center;
+}
+.footer_logo {
+  margin-bottom: 30px;
+}
+.footer_menu > a {
+  display: inline-block;
+  height: 26px;
+}
+
+.footer_menu a + p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.footer_menu > ul {
+  margin-bottom: 15px;
+}
+.social > a {
+  display: inline-block;
+  line-height: 10px;
+  margin-left: 10px;
+}
+
+.social a:first-child {
+  margin-left: 0;
+}
+
+.social a:nth-child(2) {
+  width: 28px;
+}
+.social a:nth-child(2) svg {
+  width: 28px;
+}
+
+.social > a > svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--font_color);
+}
+
+.© {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* _____________________________MEDIA__________________________ */
+
+@media (max-width: 860px) {
+  body {
+    font-size: 16px;
+  }
+  .header_menu {
+    font-size: 16px;
+  }
+
+  .flex_contaner > a {
+    width: 110px;
+    height: 28px;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* HOME */
+  .home_box {
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 60px;
+  }
+
+  .home_content {
+    max-width: 70%;
+    flex: 0 0;
+    text-align: center;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .home_img {
+    height: 350px;
+    flex: 0 0 500px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .buttons {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 15px 30px;
+  }
+
+  .btn:first-child {
+    margin-right: 20px;
+  }
+  /* ABOUT US */
+  .about_us_box {
+    padding-bottom: 30px;
+  }
+  .about_us_content {
+    max-width: 58%;
+    padding-bottom: 60px;
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .advantages > ul {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px 15px;
+  }
+
+  /* HOW WE WORK */
+  .how_we_work_box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 60px;
+  }
+  .how_we_work_img {
+    height: 350px;
+    flex: 0 0 415px;
+  }
+  .how_we_work_content {
+    max-width: 70%;
+    margin-top: 50px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .header_menu {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .home_img {
+    flex: 0 0 422px;
+  }
+
+  .how_we_work_img {
+    flex: 0 0 350px;
+  }
+
+  .home_content {
+    max-width: 58%;
+  }
+  .how_we_work_content {
+    max-width: 58%;
+  }
+
+  .advantages ul {
+    gap: 0;
+  }
+  .advantages ul > li {
+    transform: scale(0.7);
+  }
+
+  .card {
+    padding: 10px 10px 20px 10px;
+    width: 263px;
+  }
+
+  .card_img {
+    margin-bottom: 10px;
+
+    text-align: center;
+  }
+
+  .card_img img {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+}
